@@ -1,0 +1,37 @@
+Exercise: Log Data Processing
+
+You have been given a log file containing user activity data in CSV format. Your task is to process the log data, extract relevant information, and store it in a database for further analysis.
+
+Log File Format:
+The log file contains the following columns: timestamp, user_id, event_type, event_data.
+
+Example log data:
+
+css
+
+timestamp,user_id,event_type,event_data
+2023-06-26 10:30:15,12345,click,{"page": "homepage"}
+2023-06-26 10:30:18,54321,click,{"page": "product", "product_id": "P001"}
+2023-06-26 10:30:20,12345,purchase,{"product_id": "P002", "amount": 49.99}
+
+Requirements:
+
+    Read the log file and process each line to extract the following information:
+        Timestamp: The timestamp of the event.
+        User ID: The unique identifier of the user.
+        Event Type: The type of event (e.g., click, purchase).
+        Event Data: Any additional data associated with the event in JSON format.
+
+    Perform the following transformations on the event data:
+        For events of type "click", extract the "page" information.
+        For events of type "purchase", extract the "product_id" and "amount" information.
+
+    Store the processed data in a relational database of your choice. Create an appropriate table schema to store the data.
+
+    Implement error handling to handle any malformed log entries or invalid data gracefully. Log any errors encountered during the processing.
+
+    Provide a script or program that performs the above steps and can be executed on your PC.
+
+You can use any programming language and libraries of your choice to implement the solution. Remember to document your code and provide clear instructions on how to execute it. Additionally, you may include any optimizations or improvements to the pipeline if you wish to go beyond the basic requirements.
+
+Good luck with the exercise!

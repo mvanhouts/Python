@@ -1,0 +1,5 @@
+print("catastrophe"[0:3])
+print("The Dogs of War"[4:7])
+print("The trouble with Lichen"[-1:-4:-1])
+print("Springy"[0::2])
+print("meagre"[-2::-1])

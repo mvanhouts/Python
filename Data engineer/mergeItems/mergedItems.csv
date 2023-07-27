@@ -1,0 +1,6 @@
+CustomerID,Name,Age,City,OrderID,OrderDate,Product,Quantity
+1,John Smith,35,New York,1003,2023-06-17,Monitor,1
+2,Amy Johnson,28,San Francisco,1001,2023-06-15,Keyboard,2
+2,Amy Johnson,28,San Francisco,1005,2023-06-19,Mouse,2
+3,David Lee,42,Chicago,1004,2023-06-18,Keyboard,3
+4,Sarah Miller,31,Los Angeles,1002,2023-06-16,Mouse,1

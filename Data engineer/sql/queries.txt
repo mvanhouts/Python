@@ -1,0 +1,274 @@
+Exercise 1:
+
+sql
+
+CREATE TABLE Employees (
+  EmployeeID INT,
+  FirstName NVARCHAR(50),
+  LastName NVARCHAR(50),
+  Salary DECIMAL(10, 2)
+);
+
+INSERT INTO Employees (EmployeeID, FirstName, LastName, Salary)
+VALUES
+  (1, 'John', 'Doe', 5000.00),
+  (2, 'Jane', 'Smith', 6000.00),
+  (3, 'Mike', 'Johnson', 5500.00),
+  (4, 'Sarah', 'Williams', 6200.00),
+  (5, 'David', 'Brown', 5100.00),
+  (6, 'Emily', 'Jones', 5900.00),
+  (7, 'Michael', 'Taylor', 5800.00),
+  (8, 'Jessica', 'Davis', 5400.00),
+  (9, 'Christopher', 'Wilson', 6300.00),
+  (10, 'Jennifer', 'Anderson', 5700.00);
+
+Exercise 2:
+
+sql
+
+CREATE TABLE Orders (
+  OrderID INT,
+  OrderDate DATETIME,
+  CustomerID INT
+);
+
+CREATE TABLE OrderItems (
+  OrderItemID INT,
+  OrderID INT,
+  ProductID INT,
+  Quantity INT
+);
+
+INSERT INTO Orders (OrderID, OrderDate, CustomerID)
+VALUES
+  (1, '2023-06-01', 1),
+  (2, '2023-06-02', 2),
+  (3, '2023-06-03', 3),
+  (4, '2023-06-04', 1),
+  (5, '2023-06-05', 2);
+
+INSERT INTO OrderItems (OrderItemID, OrderID, ProductID, Quantity)
+VALUES
+  (1, 1, 101, 5),
+  (2, 1, 102, 3),
+  (3, 2, 101, 2),
+  (4, 2, 103, 4),
+  (5, 3, 102, 6),
+  (6, 4, 103, 1),
+  (7, 5, 101, 7),
+  (8, 5, 104, 2);
+
+Exercise 3:
+
+sql
+
+CREATE TABLE Students (
+  StudentID INT,
+  StudentName NVARCHAR(50),
+  CourseID INT
+);
+
+INSERT INTO Students (StudentID, StudentName, CourseID)
+VALUES
+  (1, 'John Doe', 101),
+  (2, 'Jane Smith', 102),
+  (3, 'Mike Johnson', 103),
+  (4, 'Sarah Williams', 101),
+  (5, 'David Brown', 102),
+  (6, 'Emily Jones', 103),
+  (7, 'Michael Taylor', 101),
+  (8, 'Jessica Davis', 102),
+  (9, 'Christopher Wilson', 103),
+  (10, 'Jennifer Anderson', 101),
+  (11, 'Daniel Clark', 101),
+  (12, 'Olivia Lee', 102);
+
+Exercise 4:
+
+sql
+
+CREATE TABLE Sales (
+  SaleID INT,
+  SaleDate DATETIME,
+  ProductID INT,
+  Quantity INT,
+  Price DECIMAL(10, 2)
+);
+
+INSERT INTO Sales (SaleID, SaleDate, ProductID, Quantity, Price)
+VALUES
+  (1, '2023-01-10', 101, 5, 10.00),
+  (2, '2023-01-15', 102, 3, 15.00),
+  (3, '2023-02-02', 103, 2, 20.00),
+  (4, '2023-02-05', 101, 4, 10.00),
+  (5, '2023-02-20', 102, 6, 15.00),
+  (6, '2023-03-01', 103, 1, 20.00),
+  (7, '2023-03-10', 101, 7, 10.00),
+  (8, '2023-04-02', 102, 2, 15.00),
+  (9, '2023-04-05', 103, 3, 20.00),
+  (10, '2023-04-20', 101, 5, 10.00);
+
+Exercise 5:
+
+sql
+
+CREATE TABLE Books (
+  BookID INT,
+  Title NVARCHAR(100),
+  AuthorID INT,
+  PublicationYear INT
+);
+
+INSERT INTO Books (BookID, Title, AuthorID, PublicationYear)
+VALUES
+  (1, 'Book 1', 1, 2010),
+  (2, 'Book 2', 1, 2012),
+  (3, 'Book 3', 2, 2011),
+  (4, 'Book 4', 3, 2015),
+  (5, 'Book 5', 3, 2013),
+  (6, 'Book 6', 4, 2014),
+  (7, 'Book 7', 4, 2016),
+  (8, 'Book 8', 5, 2017),
+  (9, 'Book 9', 5, 2018),
+  (10, 'Book 10', 5, 2020),
+  (11, 'Book 11', 6, 2019);
+
+Exercise 6:
+
+sql
+
+CREATE TABLE Customers2 (
+  CustomerID INT,
+  CustomerName NVARCHAR(50),
+  City NVARCHAR(50)
+);
+
+CREATE TABLE Orders2 (
+  OrderID INT,
+  CustomerID INT
+);
+
+INSERT INTO Customers2 (CustomerID, CustomerName, City)
+VALUES
+  (1, 'John Doe', 'New York'),
+  (2, 'Jane Smith', 'London'),
+  (3, 'Mike Johnson', 'New York'),
+  (4, 'Sarah Williams', 'Paris'),
+  (5, 'David Brown', 'New York'),
+  (6, 'Emily Jones', 'London'),
+  (7, 'Michael Taylor', 'New York'),
+  (8, 'Jessica Davis', 'Paris'),
+  (9, 'Christopher Wilson', 'London'),
+  (10, 'Jennifer Anderson', 'New York');
+
+INSERT INTO Orders2 (OrderID, CustomerID)
+VALUES
+  (1, 1),
+  (2, 2),
+  (3, 1),
+  (4, 3),
+  (5, 4),
+  (6, 1),
+  (7, 3),
+  (8, 4),
+  (9, 5),
+  (10, 6),
+  (11, 7),
+  (12, 2),
+  (13, 1),
+  (14, 5),
+  (15, 3),
+  (16, 1);
+
+Exercise 7:
+
+sql
+
+CREATE TABLE Employees2 (
+  EmployeeID INT,
+  FirstName NVARCHAR(50),
+  LastName NVARCHAR(50),
+  HireDate DATETIME
+);
+
+INSERT INTO Employees2 (EmployeeID, FirstName, LastName, HireDate)
+VALUES
+  (1, 'John', 'Doe', '2016-05-01'),
+  (2, 'Jane', 'Smith', '2018-09-12'),
+  (3, 'Mike', 'Johnson', '2015-02-28'),
+  (4, 'Sarah', 'Williams', '2017-07-15'),
+  (5, 'David', 'Brown', '2014-10-20'),
+  (6, 'Emily', 'Jones', '2019-03-10'),
+  (7, 'Michael', 'Taylor', '2013-06-05'),
+  (8, 'Jessica', 'Davis', '2016-09-30'),
+  (9, 'Christopher', 'Wilson', '2012-12-01'),
+  (10, 'Jennifer', 'Anderson', '2017-04-18');
+
+Exercise 8:
+
+sql
+
+CREATE TABLE Products (
+  ProductID INT,
+  ProductName NVARCHAR(100),
+  CategoryID INT,
+  Price DECIMAL(10, 2)
+);
+
+INSERT INTO Products (ProductID, ProductName, CategoryID, Price)
+VALUES
+  (101, 'Product 1', 1, 10.00),
+  (102, 'Product 2', 1, 15.00),
+  (103, 'Product 3', 2, 20.00),
+  (104, 'Product 4', 2, 12.50),
+  (105, 'Product 5', 3, 18.00),
+  (106, 'Product 6', 3, 22.50),
+  (107, 'Product 7', 1, 14.00),
+  (108, 'Product 8', 2, 16.00),
+  (109, 'Product 9', 3, 19.50),
+  (110, 'Product 10', 3, 21.00);
+
+Exercise 9:
+
+sql
+
+CREATE TABLE Sales (
+  SaleID INT,
+  SaleDate DATETIME,
+  ProductID INT,
+  Quantity INT
+);
+
+INSERT INTO Sales (SaleID, SaleDate, ProductID, Quantity)
+VALUES
+  (1, '2023-06-01', 101, 5),
+  (2, '2023-06-02', 102, 3),
+  (3, '2023-06-02', 103, 2),
+  (4, '2023-06-03', 101, 4),
+  (5, '2023-06-03', 102, 6),
+  (6, '2023-06-04', 103, 1),
+  (7, '2023-06-04', 101, 7),
+  (8, '2023-06-05', 104, 2);
+
+Exercise 10:
+
+sql
+
+CREATE TABLE Customers3 (
+  CustomerID INT,
+  CustomerName NVARCHAR(50),
+  JoinDate DATETIME
+);
+
+INSERT INTO Customers3 (CustomerID, CustomerName, JoinDate)
+VALUES
+  (1, 'John Doe', '2023-05-01'),
+  (2, 'Jane Smith', '2023-05-02'),
+  (3, 'Mike Johnson', '2023-05-03'),
+  (4, 'Sarah Williams', '2023-05-04'),
+  (5, 'David Brown', '2023-06-01'),
+  (6, 'Emily Jones', '2023-06-02'),
+  (7, 'Michael Taylor', '2023-06-03'),
+  (8, 'Jessica Davis', '2023-06-04'),
+  (9, 'Christopher Wilson', '2023-06-05'),
+  (10, 'Jennifer Anderson', '2023-06-06');	

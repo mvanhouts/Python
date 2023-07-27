@@ -1,0 +1,36 @@
+create procedure sp_InsertPrediction
+@date date,
+@shadow varchar(50),
+@avgTemperature float,
+@region varchar(50)
+
+as	
+begin transaction
+begin try
+	if not exists
+	(select * from Predictions
+	where [Date] = @date)
+
+	insert into Predictions values(
+	case 
+	when (select max(PredictionID) from Predictions) is null -- Automatic ID system, creates a new ID or ups the highest one on entry.
+	then 1
+	else (select max(PredictionID) + 1 from Predictions)
+	end,
+	@date,
+	@shadow,
+	@avgTemperature,
+	@region
+	)
+
+	else
+	print('Prediction is already in the database, no record was added') -- Message when entry is already existing.
+
+	commit transaction
+end try 
+
+begin catch
+	raiserror('An error occured' ,16,1) -- Error handling.
+	print 'Error:' + error_message()
+	rollback transaction
+end catch

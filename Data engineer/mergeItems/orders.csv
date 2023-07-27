@@ -1,0 +1,6 @@
+OrderID,CustomerID,OrderDate,Product,Quantity
+1001,2,2023-06-15,Keyboard,2
+1002,4,2023-06-16,Mouse,1
+1003,1,2023-06-17,Monitor,1
+1004,3,2023-06-18,Keyboard,3
+1005,2,2023-06-19,Mouse,2

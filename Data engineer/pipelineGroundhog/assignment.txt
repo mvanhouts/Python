@@ -1,0 +1,25 @@
+Certainly! Here's a beginner exercise for building a data pipeline that involves ingesting data from a CSV file, transforming it, and storing it in a database.
+
+Exercise: Building a Data Pipeline
+
+    Data Ingestion:
+        Download a sample CSV file containing some data (e.g., from a public dataset or create your own).
+        Load the CSV file into a pandas DataFrame.
+        Display the first few rows of the DataFrame to inspect the data.
+
+    Data Transformation:
+        Perform some basic data transformations on the DataFrame (e.g., renaming columns, filtering rows, converting data types, etc.).
+        Ensure that the transformed DataFrame is in the desired format for storing in the database.
+
+    Data Storage:
+        Set up a local database (e.g., SQLite) or use an existing database.
+        Establish a connection to the database.
+        Create a table in the database that matches the structure of the transformed DataFrame.
+        Store the transformed data from the DataFrame into the database table.
+
+    Data Retrieval and Validation:
+        Retrieve the stored data from the database table.
+        Perform some basic validation checks to ensure the data was stored correctly (e.g., compare row counts, sample data, etc.).
+        Print a success message if the validation checks pass.
+
+Remember, this exercise is designed to help you get hands-on experience building a basic data pipeline. Feel free to adapt and modify the exercise based on your interests and learning goals.

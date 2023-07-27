@@ -1,0 +1,76 @@
+-----------------------------select query-----------------------------
+select TOP 2 EventName as 'What', EventDate as 'When' from tblEvent
+order by EventDate asc
+
+select TOP 2 EventName as 'What', EventDate as 'When' from tblEvent
+order by EventDate desc
+
+------------------------------Wales-----------------------------------
+create view vw_Relation_to_Wales as
+(
+select Position, Country, KmSquared, 
+
+(KmSquared %
+20761) as AreaLeftOver,
+
+(KmSquared / 20761) as WalesUnits,
+
+case when(KmSquared > 20761)
+then
+concat((KmSquared / 20761),
+' x Wales plus ',
+(KmSquared % 20761),
+' sq. km.')
+
+else
+'Smaller than Wales'
+end as WalesComparison
+
+from CountriesByArea
+
+order by abs(KmSquared-20761) asc
+)
+
+------------------------------Boring events-----------------------------------
+select t.* from (select EventName,
+substring(EventName,1,1) as EersteLetter,
+substring(EventName, len(EventName),1) as LaatsteLetter,
+
+case 
+when substring(EventName,1,1) = substring(EventName, len(EventName),1)
+then 'Same letter'
+
+when substring(EventName,1,1) in ('a', 'e', 'i', 'o', 'u')
+and
+substring(EventName, len(EventName),1) in ('a', 'e', 'i', 'o', 'u')
+then 'Begins and ends with a vowel'
+
+else 'Boring'
+end as 'Verdict'
+
+from tblEvent)t
+
+where t.Verdict != 'Boring'
+
+
+/*case when
+eerste letter pakken -> substring(EventName, 1,1)
+laatste letter pakken -> len() -> substring(EventName, max(stringcount)
+1ste when
+eerste en laatste letter met elkaar vergelijken
+= gelijk -> 'Same letter'
+2e when
+maken array van klinkers
+eerste letter vergelijken met array
+laatste letter vergelijken met array
+beide klopt (AND) -> 'Begins and ends with vowel'
+else boring
+*/
+
+-------------------------------Where 1--------------------------------
+select EventName, EventDetails, EventDate from tblEvent
+join tblCategory on tblEvent.CategoryID = tblCategory.CategoryID
+where (EventDetails like '% water %'
+or tblCategory.CategoryID = 4
+or CountryID in (8, 22, 30, 35))
+and year(EventDate) > 1970
